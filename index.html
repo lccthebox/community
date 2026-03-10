@@ -370,26 +370,27 @@ nav.scrolled{
 .seeall:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--dark);}
 
 .photo-wall{
-  display:grid;
-  grid-template-columns:repeat(12,1fr);
-  grid-template-rows:repeat(5,80px);
+  display:flex;
+  flex-direction:column;
   gap:8px;
 }
-.pw{border-radius:10px;overflow:hidden;position:relative;cursor:pointer;border:2px solid transparent;transition:transform 0.25s,border-color 0.25s;}
+.pw-row{
+  display:flex;
+  gap:8px;
+}
+.pw{
+  border-radius:10px;
+  overflow:hidden;
+  position:relative;
+  cursor:pointer;
+  border:2px solid transparent;
+  transition:transform 0.25s,border-color 0.25s;
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+  flex-shrink:0;
+}
 .pw:hover{transform:scale(1.02);z-index:5;border-color:var(--dark);}
-/* Row1: pw1(7col,3row) | pw2(5col,2row)        */
-/* Row2: pw1 cont.      | pw3(5col,1row)         */
-/* Row3: pw4(4col,2row) | pw5(4col,2row) | pw6(4col,2row) */
-/* Row4: pw4 cont.      | pw5 cont.      | pw6 cont.       */
-/* Row5: pw7(6col,1row) | pw8(6col,1row)                   */
-.pw1{ grid-column:1 / span 7; grid-row:1 / span 3; }
-.pw2{ grid-column:8 / span 5; grid-row:1 / span 2; }
-.pw3{ grid-column:8 / span 5; grid-row:3 / span 1; }
-.pw4{ grid-column:1 / span 4; grid-row:4 / span 2; }
-.pw5{ grid-column:5 / span 4; grid-row:4 / span 2; }
-.pw6{ grid-column:9 / span 4; grid-row:4 / span 2; }
-.pw7{ grid-column:1 / span 6; grid-row:6 / span 2; }
-.pw8{ grid-column:7 / span 6; grid-row:6 / span 2; }
 .pw-overlay{
   position:absolute;inset:0;
   background:var(--red);
@@ -881,19 +882,10 @@ footer{background:var(--off);padding:64px 48px 36px;border-top:3px solid rgba(25
   .community-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 24px; }
   .community-h2 { font-size: clamp(34px, 10vw, 52px); }
   .seeall { font-size: 12px; padding: 8px 16px; }
-  .photo-wall {
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(7, 60px);
-    gap: 6px;
-  }
-  .pw1{ grid-column:1 / span 6; grid-row:1 / span 2; }
-  .pw2{ grid-column:1 / span 3; grid-row:3 / span 2; }
-  .pw3{ grid-column:4 / span 3; grid-row:3 / span 2; }
-  .pw4{ grid-column:1 / span 3; grid-row:5 / span 2; }
-  .pw5{ grid-column:4 / span 3; grid-row:5 / span 2; }
-  .pw6{ grid-column:1 / span 6; grid-row:7 / span 2; }
-  .pw7{ grid-column:1 / span 3; grid-row:9 / span 2; }
-  .pw8{ grid-column:4 / span 3; grid-row:9 / span 2; }
+  .photo-wall .pw-row { gap: 6px; }
+  .photo-wall .pw-row:nth-child(1) { height: 200px; }
+  .photo-wall .pw-row:nth-child(2) { height: 150px; }
+  .photo-wall .pw-row:nth-child(3) { height: 150px; }
 
   /* ── VOICES (reviews) ── */
   #voices { padding: 56px 20px; }
@@ -1287,14 +1279,25 @@ footer{background:var(--off);padding:64px 48px 36px;border-top:3px solid rgba(25
   </div>
 
   <div class="photo-wall reveal">
-    <div class="pw pw1" style="background:url('RealMoment1.jpg') center/cover no-repeat;"><div class="pw-overlay"><span>Community Outing 🌿</span></div></div>
-    <div class="pw pw2" style="background:url('RealMoment2.jpg') center/cover no-repeat;"><div class="pw-overlay"><span>Cheering at Baseball ⚾</span></div></div>
-    <div class="pw pw3" style="background:url('RealMoment3.jpg') center/cover no-repeat;"><div class="pw-overlay"><span>Year-End Party 🎉</span></div></div>
-    <div class="pw pw4" style="background:url('RealMoment4.jpg') center/cover no-repeat;"><div class="pw-overlay"><span>Leaders' Meeting</span></div></div>
-    <div class="pw pw5" style="background:url('RealMoment5.jpg') center/cover no-repeat;"><div class="pw-overlay"><span>Spring Hiking 🏔️</span></div></div>
-    <div class="pw pw6" style="background:url('RealMoment6.jpg') center/cover no-repeat;"><div class="pw-overlay"><span>Party at TheBox 🎊</span></div></div>
-    <div class="pw pw7" style="background:url('RealMoment7.jpg') center/cover no-repeat;"><div class="pw-overlay"><span>Potluck Party 🍽️</span></div></div>
-    <div class="pw pw8" style="background:url('RealMoment8.jpg') center/cover no-repeat;"><div class="pw-overlay"><span>Anniversary Party 🥳</span></div></div>
+    <!-- Row 1: big left + 2 stacked right -->
+    <div class="pw-row" style="height:280px;">
+      <div class="pw" style="flex:1.4; background:url('RealMoment1.jpg') center/cover;"><div class="pw-overlay"><span>Community Outing 🌿</span></div></div>
+      <div class="pw-row" style="flex:1; flex-direction:column; gap:8px; display:flex;">
+        <div class="pw" style="flex:1; background:url('RealMoment2.jpg') center/cover;"><div class="pw-overlay"><span>Cheering at Baseball ⚾</span></div></div>
+        <div class="pw" style="flex:1; background:url('RealMoment3.jpg') center/cover;"><div class="pw-overlay"><span>Year-End Party 🎉</span></div></div>
+      </div>
+    </div>
+    <!-- Row 2: 3 equal -->
+    <div class="pw-row" style="height:220px;">
+      <div class="pw" style="flex:1; background:url('RealMoment4.jpg') center/cover;"><div class="pw-overlay"><span>Leaders' Meeting</span></div></div>
+      <div class="pw" style="flex:1; background:url('RealMoment5.jpg') center/cover;"><div class="pw-overlay"><span>Spring Hiking 🏔️</span></div></div>
+      <div class="pw" style="flex:1; background:url('RealMoment6.jpg') center/cover;"><div class="pw-overlay"><span>Party at TheBox 🎊</span></div></div>
+    </div>
+    <!-- Row 3: 2 equal -->
+    <div class="pw-row" style="height:220px;">
+      <div class="pw" style="flex:1; background:url('RealMoment7.jpg') center/cover;"><div class="pw-overlay"><span>Potluck Party 🍽️</span></div></div>
+      <div class="pw" style="flex:1; background:url('RealMoment8.jpg') center/cover;"><div class="pw-overlay"><span>Anniversary Party 🥳</span></div></div>
+    </div>
   </div>
 </section>
 
