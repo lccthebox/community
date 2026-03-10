@@ -821,145 +821,134 @@ footer{background:var(--off);padding:64px 48px 36px;border-top:3px solid rgba(25
 
   /* ── NAV ── */
   nav { padding: 0 20px; height: 56px; }
-  .logo { font-size: 24px; gap: 8px; }
+  .logo { font-size: 22px; gap: 8px; }
   .logo-badge { width: 28px; height: 28px; font-size: 14px; }
   .nav-links { display: none; }
 
   /* ── HERO ── */
   #hero {
-    padding: 72px 20px 48px;
+    padding: 72px 24px 48px;
     grid-template-columns: 1fr;
     gap: 0;
     min-height: auto;
   }
   .hero-left { max-width: 100%; }
-  .hero-badge { font-size: 10px; padding: 4px 12px; margin-bottom: 16px; }
-  .hero-h1 { font-size: clamp(48px, 14vw, 72px); line-height: 0.92; margin-bottom: 16px; }
-  .hero-tagline { font-size: 13px; letter-spacing: 3px; margin-bottom: 14px; }
-  .hero-desc { font-size: 14px; line-height: 1.6; margin-bottom: 28px; }
-  .hero-btns { gap: 10px; flex-wrap: wrap; }
-  .btn-main { padding: 14px 24px; font-size: 14px; }
-  .btn-outline { padding: 13px 22px; font-size: 14px; }
-  .hero-stats { gap: 24px; margin-top: 32px; padding-top: 24px; }
-  .hs-n { font-size: 30px; }
-  .hs-l { font-size: 11px; }
+  .hero-badge { font-size: 10px; padding: 5px 14px; margin-bottom: 20px; }
+  .hero-h1 { font-size: clamp(44px, 13vw, 64px); line-height: 0.92; margin-bottom: 20px; }
+  .hero-tagline { font-size: 12px; letter-spacing: 3px; margin-bottom: 12px; }
+  .hero-desc { font-size: 14px; line-height: 1.7; margin-bottom: 32px; }
+  .hero-btns { gap: 12px; flex-direction: column; align-items: flex-start; }
+  .btn-main { padding: 16px 28px; font-size: 15px; width: auto; }
+  .btn-outline { padding: 15px 28px; font-size: 15px; width: auto; }
+  .hero-stats { gap: 0; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--tan); justify-content: flex-start; gap: 32px; }
+  .hs-n { font-size: 32px; }
+  .hs-l { font-size: 10px; }
   .hero-right { display: none; }
 
-  /* ── MARQUEE PHOTOS ── */
-  .photo-strip { height: 120px; }
-  .pm-item { width: 160px; height: 116px; }
+  /* ── MARQUEE ── */
+  .photo-strip { height: 110px; }
+  .pm-item { width: 150px; height: 106px; }
 
   /* ── ABOUT / OUR STORY ── */
-  #about { padding: 56px 20px; }
-  .about-inner { grid-template-columns: 1fr; gap: 28px; }
-  .about-h2 { font-size: clamp(34px, 10vw, 52px); }
-  .about-body p { font-size: 14px; line-height: 1.7; }
-  .about-photos-row { gap: 8px; }
-  .ag { border-radius: 10px; }
-  .ag .ph { height: 180px !important; }
+  #about {
+    padding: 60px 24px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .about-h2 { font-size: clamp(36px, 11vw, 52px); }
+  .about-p { font-size: 14px; line-height: 1.8; }
+  .about-stats { gap: 24px; margin-top: 24px; }
   .astat-n { font-size: 36px; }
-  .astat-l { font-size: 11px; }
-  .about-stats { gap: 0; margin-top: 24px; }
+  .about-photos-row { grid-template-columns: repeat(3,1fr); gap: 8px; }
+  .ag .ph { height: 130px !important; }
+  .about-p { font-size: 14px; line-height: 1.8; }
+  .about-stats { gap: 24px; margin-top: 24px; }
+  .astat-n { font-size: 36px; }
+  .about-photos-row { grid-template-columns: repeat(3,1fr); gap: 8px; }
+  .ag .ph { height: 140px !important; }
 
   /* ── CHOICE ── */
-  #choice { padding: 56px 20px; }
-  .choice-head { margin-bottom: 28px; }
-  .choice-head-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .choice-h2 { font-size: clamp(36px, 11vw, 56px); }
+  #choice { padding: 60px 24px; }
+  .choice-head { margin-bottom: 32px; }
+  .choice-head-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .choice-h2 { font-size: clamp(36px, 11vw, 54px); }
   .choice-sub { font-size: 14px; max-width: 100%; }
-  .choice-grid { grid-template-columns: 1fr; gap: 16px; }
-  .choice-card { border-radius: 12px; }
-  .cc-top { height: 200px; }
-  .cc-body { padding: 20px 18px; }
-  .cc-label { font-size: 10px; }
-  .cc-title { font-size: 17px; line-height: 1.3; }
-  .cc-desc { font-size: 13px; line-height: 1.6; }
-  .cc-tag-row { flex-wrap: wrap; gap: 6px; }
-  .cc-cta-row { margin-top: 16px; gap: 8px; }
+  .choice-grid { grid-template-columns: 1fr; gap: 20px; }
+  .cc-top { height: 220px; }
+  .cc-body { padding: 22px 20px; }
+  .cc-title { font-size: 18px; line-height: 1.3; }
+  .cc-desc { font-size: 13px; line-height: 1.65; }
+  .cc-tag-row { flex-wrap: wrap; gap: 8px; }
 
   /* ── COMMUNITY WALL ── */
-  #community { padding: 56px 20px; }
-  .community-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 24px; }
-  .community-h2 { font-size: clamp(34px, 10vw, 52px); }
-  .seeall { font-size: 12px; padding: 8px 16px; }
-  .photo-wall .pw-row { gap: 6px; }
-  .photo-wall .pw-row:nth-child(1) { height: 200px; }
-  .photo-wall .pw-row:nth-child(2) { height: 150px; }
-  .photo-wall .pw-row:nth-child(3) { height: 150px; }
+  #community { padding: 60px 24px; }
+  .community-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 28px; }
+  .community-h2 { font-size: clamp(36px, 11vw, 54px); }
+  /* Mobile: 2-column grid, all equal */
+  .photo-wall { flex-direction: column; gap: 8px; }
+  .photo-wall > div { flex-direction: row !important; height: 160px !important; }
+  .photo-wall > div:first-child { height: 220px !important; }
+  .photo-wall > div > div { height: 100% !important; }
 
-  /* ── VOICES (reviews) ── */
-  #voices { padding: 56px 20px; }
+  /* ── VOICES ── */
+  #voices { padding: 60px 24px; }
   .voices-head { margin-bottom: 28px; }
-  .voices-h2 { font-size: clamp(34px, 10vw, 52px); }
+  .voices-h2 { font-size: clamp(36px, 11vw, 54px); }
   .review-slider-wrap { margin-top: 28px; }
-  .review-card { flex: 0 0 calc(100vw - 56px); padding: 20px; }
-  .rc-text { font-size: 13px; line-height: 1.7; }
-  .rc-name { font-size: 13px; }
+  .review-card { flex: 0 0 calc(100vw - 48px); padding: 22px 20px; }
+  .rc-text { font-size: 13px; line-height: 1.75; }
   .slider-btns { margin-top: 20px; }
 
-  /* ── CLUBS / SCHEDULE ── */
-  #schedule { padding: 56px 20px; }
-  .sched-head { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 28px; }
-  .sched-h2 { font-size: clamp(34px, 10vw, 52px); }
+  /* ── CLUBS ── */
+  #schedule { padding: 60px 24px; }
+  .sched-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 32px; }
+  .sched-h2 { font-size: clamp(36px, 11vw, 54px); }
   .sched-head p { font-size: 13px; text-align: left !important; max-width: 100% !important; }
-  .clubs-grid { grid-template-columns: 1fr; gap: 16px; }
-  .club-card { border-radius: 12px; }
-  .club-img { height: 190px; }
-  .club-body { padding: 18px; }
-  .club-title { font-size: 19px; }
-  .club-desc { font-size: 13px; }
+  .clubs-grid { grid-template-columns: 1fr; gap: 20px; }
+  .club-img { height: 200px; }
+  .club-body { padding: 20px; }
+  .club-title { font-size: 20px; }
+  .club-desc { font-size: 13px; line-height: 1.65; }
 
   /* ── BOOK ── */
-  #book { padding: 56px 20px; }
-  .book-inner { grid-template-columns: 1fr; gap: 36px; }
+  #book { padding: 60px 24px; }
+  .book-inner { grid-template-columns: 1fr; gap: 40px; }
   .book-h2 { font-size: clamp(36px, 11vw, 56px); }
-  .book-desc { font-size: 14px; line-height: 1.7; }
+  .book-desc { font-size: 14px; line-height: 1.75; }
   .book-chips { flex-wrap: wrap; gap: 8px; }
-  .book-chip { font-size: 12px; padding: 6px 12px; }
   .book-right { justify-content: flex-start; }
-  .book-cover { width: 150px; height: 210px; }
-  .book-cover-wrap { margin-left: 0; }
+  .book-cover { width: 155px; height: 218px; }
 
   /* ── CTA ── */
-  #cta { padding: 56px 20px; }
-  .cta-h2 { font-size: clamp(44px, 13vw, 72px); }
+  #cta { padding: 60px 24px; }
+  .cta-h2 { font-size: clamp(46px, 13vw, 70px); }
   .cta-sub { font-size: 14px; }
   .cta-btns { flex-direction: column; align-items: stretch; gap: 12px; margin-top: 28px; }
-  .btn-cta-main, .btn-cta-out { text-align: center; justify-content: center; font-size: 15px; padding: 16px 24px; }
+  .btn-cta-main, .btn-cta-out { text-align: center; justify-content: center; font-size: 15px; padding: 17px 24px; }
 
   /* ── FOOTER ── */
-  footer { padding: 44px 20px 28px; }
-  .footer-inner { flex-direction: column; gap: 28px; }
-  .footer-logo { font-size: 22px; }
-  .footer-desc { font-size: 13px; }
+  footer { padding: 48px 24px 32px; }
+  .footer-inner { flex-direction: column; gap: 32px; }
   .footer-right { flex-direction: column; gap: 20px; }
   .footer-links { gap: 14px; flex-wrap: wrap; }
   .footer-links a { font-size: 13px; }
-  .footer-copy { font-size: 11px; margin-top: 24px; }
 
-  /* ── SCHEDULE MODAL ── */
+  /* ── MODALS ── */
   #scheduleModal > div:last-child {
-    width: 95%;
-    padding: 28px 20px;
-    max-height: 90vh;
-    overflow-y: auto;
-    border-radius: 12px;
+    width: 95%; padding: 28px 20px;
+    max-height: 90vh; overflow-y: auto; border-radius: 14px;
   }
-
-  /* ── SIGNUP MODALS ── */
   .form-modal-overlay .form-panel,
   .form-modal-overlay .form-panel-lx {
-    width: 96%;
-    padding: 28px 18px;
-    max-height: 92vh;
-    border-radius: 14px;
+    width: 96%; padding: 28px 20px;
+    max-height: 92vh; border-radius: 16px;
   }
   .fp-title { font-size: clamp(28px, 9vw, 42px); line-height: 1.0; }
   .fp-subtitle { font-size: 13px; }
   .fp-field label { font-size: 12px; }
   .fp-field input, .fp-field textarea { font-size: 15px; padding: 12px 14px; }
-  .fp-btn-next { padding: 15px; font-size: 15px; }
-  .fp-radio-item label { padding: 11px 14px; font-size: 14px; }
+  .fp-btn-next { padding: 16px; font-size: 15px; }
+  .fp-radio-item label { padding: 12px 14px; font-size: 14px; }
   .sched-chip label { padding: 10px 12px; }
   .sc-day { font-size: 13px; }
   .sc-time { font-size: 11px; }
